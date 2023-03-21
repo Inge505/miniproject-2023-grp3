@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card >
+    <img alt="cool tree" src="assets/logo.png" />
+    <ion-card-header>
+      <ion-card-title>Welcome to Lapse</ion-card-title>
+      <ion-card-subtitle>Login</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content >
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input placeholder="Username" type="text"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input placeholder="Password" type="Password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button expand="block" color="primary" (click)="login()">Login</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
