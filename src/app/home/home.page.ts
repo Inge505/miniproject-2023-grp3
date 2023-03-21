@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,21 +8,39 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router : Router) {}
+  constructor(private router: Router, private renderer: Renderer2) { }
 
-  logout(){
+  logout() {
     this.router.navigate(['/login']);
   }
-  like(){
+  like() {
     console.log("Liked post");
   }
-  dislike(){
+  dislike() {
     console.log("Disliked post");
   }
-  comment(){
+  comment() {
     console.log("Commented on post");
   }
-  bid(){
+  bid() {
     console.log("Bid on post");
+  }
+
+  trending() {
+    var trend = <HTMLInputElement>document.getElementById("trendingButton");
+    var follow = <HTMLInputElement>document.getElementById("followingButton");
+    if (trend != null)
+      trend.style.backgroundColor = ('var(--ion-color-primary-tint)');
+    if (follow != null)
+      follow.style.backgroundColor = ('rgba(255,255,255,0)');
+  }
+
+  following() { 
+  var trend = <HTMLInputElement>document.getElementById("trendingButton");
+  var follow = <HTMLInputElement>document.getElementById("followingButton");
+  if (trend != null)
+    trend.style.backgroundColor = ('rgba(255,255,255,0)');
+  if (follow != null)
+    follow.style.backgroundColor = ('var(--ion-color-primary-tint)');
   }
 }

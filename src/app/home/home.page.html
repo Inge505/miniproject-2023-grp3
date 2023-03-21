@@ -1,37 +1,194 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-toolbar color="black">
 
+
+    <ion-grid style="--background:rgba(0,0,0,0);">
+      <ion-row style="--background:rgba(0,0,0,0);">
+        <ion-col style="--background:rgba(0,0,0,0);">
+          <div class="buttonContainer">
+
+            <ion-button id="followingButton" shape="round" fill="solid" (click)="following()" class="followingButton" >
+              Following
+            </ion-button>
+
+            <ion-button id="trendingButton"shape="round" fill="solid" (click)="trending()" class="trendingButton" >
+              Trending
+            </ion-button>
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-toolbar>
 </ion-header>
 
 <ion-content color=secondary [fullscreen]="true">
 
-  <ion-toolbar>
-    
 
-      <ion-buttons color="primary">
-        <div class="s" color= primary-tint>
-        <ion-button fill ="solid" color= var()>
-          Trending
-        </ion-button>
-
-        <ion-button fill="solid" color= primary>
-          Following
-        </ion-button>
-        </div>
-      </ion-buttons>
-    
-
-  </ion-toolbar>
 
   <hr>
   <div color=secondary>
     <ion-toolbar color=secondary>
-      <ion-avatar>
-        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      </ion-avatar>
+      <ion-grid>
+        <ion-row>
+
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+          
+        </ion-row>
+      </ion-grid>
     </ion-toolbar>
     <img class="postImage" alt="Post" src="assets/shapes.svg" />
     <ion-toolbar color="secondary">
-      <ion-item> Sick new post I just Posted please like and bid!</ion-item>
+      <ion-list lines="none"><ion-item> Sick new post I just Posted please like and bid!</ion-item></ion-list>
+      <ion-buttons slot="end">
+
+        <ion-button expand="block" color="primary" (click)="like()">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="comment()">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="bid()">
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-button>
+
+
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <hr>
+
+  <div color=secondary>
+    <ion-toolbar color=secondary>
+      <ion-grid>
+        <ion-row>
+
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+          
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+    <img class="postImage" alt="Post" src="assets/shapes.svg" />
+    <ion-toolbar color="secondary">
+      <ion-list lines="none"><ion-item> Sick new post I just Posted please like and bid!</ion-item></ion-list>
+      <ion-buttons slot="end">
+
+        <ion-button expand="block" color="primary" (click)="like()">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="comment()">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="bid()">
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-button>
+
+
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <hr>
+
+  <div color=secondary>
+    <ion-toolbar color=secondary>
+      <ion-grid>
+        <ion-row>
+
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+          
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+    <img class="postImage" alt="Post" src="assets/shapes.svg" />
+    <ion-toolbar color="secondary">
+      <ion-list lines="none"><ion-item> Sick new post I just Posted please like and bid!</ion-item></ion-list>
+      <ion-buttons slot="end">
+
+        <ion-button expand="block" color="primary" (click)="like()">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="comment()">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="bid()">
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-button>
+
+
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <hr>
+
+  <div color=secondary>
+    <ion-toolbar color=secondary>
+      <ion-grid>
+        <ion-row>
+
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+          
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+    <img class="postImage" alt="Post" src="assets/shapes.svg" />
+    <ion-toolbar color="secondary">
+      <ion-list lines="none"><ion-item> Sick new post I just Posted please like and bid!</ion-item></ion-list>
+      <ion-buttons slot="end">
+
+        <ion-button expand="block" color="primary" (click)="like()">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="comment()">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </ion-button>
+
+        <ion-button expand="block" color="primary" (click)="bid()">
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-button>
+
+
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+  <hr>
+
+  <div color=secondary>
+    <ion-toolbar color=secondary>
+      <ion-grid>
+        <ion-row>
+
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+          
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+    <img class="postImage" alt="Post" src="assets/shapes.svg" />
+    <ion-toolbar color="secondary">
+      <ion-list lines="none"><ion-item> Sick new post I just Posted please like and bid!</ion-item></ion-list>
       <ion-buttons slot="end">
 
         <ion-button expand="block" color="primary" (click)="like()">
