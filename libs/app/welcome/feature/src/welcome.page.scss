@@ -1,0 +1,28 @@
+.center-container {
+  height: 100%;
+  display: flex;
+}
+
+.logo {
+  padding-bottom: 50px;
+}
+
+// @media (prefers-color-scheme: light) {
+//   .logo-light {
+//     display: block;
+//   }
+
+//   .logo-dark {
+//     display: none;
+//   }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   .logo-light {
+//     display: none;
+//   }
+
+//   .logo-dark {
+//     display: block;
+//   }
+// }

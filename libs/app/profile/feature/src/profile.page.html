@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-align-items-center">
+      Profile
+      <ng-container *ngIf="(profile$ | async) as profile;">
+        <ion-icon
+          *ngIf="profile.status == 'Incomplete'"
+          color="danger"
+          name="alert-circle-outline"></ion-icon>
+        <ion-icon
+          *ngIf="profile.status == 'Complete'"
+          color="success"
+          name="checkmark-circle-outline"></ion-icon>
+      </ng-container>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="ion-align-items-center">
+        Profile
+        <ng-container *ngIf="(profile$ | async) as profile;">
+          <ion-icon
+            *ngIf="profile.status == 'Incomplete'"
+            color="danger"
+            name="alert-circle-outline"></ion-icon>
+          <ion-icon
+            *ngIf="profile.status == 'Complete'"
+            color="success"
+            name="checkmark-circle-outline"></ion-icon>
+        </ng-container>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ng-container *ngIf="(profile$ | async) as profile; else noProfile">
+    <ms-profile-account-details-component></ms-profile-account-details-component>
+    <ms-profile-personal-details-component></ms-profile-personal-details-component>
+    <ms-profile-contact-details-component></ms-profile-contact-details-component>
+    <ms-profile-address-details-component></ms-profile-address-details-component>
+    <ms-profile-occupation-details-component></ms-profile-occupation-details-component>
+  </ng-container>
+  <ng-template #noProfile>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ngx-skeleton-loader
+            count="5"
+            [theme]="{height: '150px'}"
+            appearance="line"></ngx-skeleton-loader>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+</ion-content>
