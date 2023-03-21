@@ -1,142 +1,83 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
 
-    <ion-title>
-      Home
-    </ion-title>
-    
-    
-    <ion-buttons >
-      <button>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
-      <button>
-        <ion-icon name="more"></ion-icon>
-      </button>
-      <ion-button expand="block" color="primary" (click)="logout()">
-        Logout
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <img class="logoImage" alt="cool tree" src="assets/logo.png" />
-    <ion-card-header>
-      <ion-card-title>Welcome to Lapse</ion-card-title>
-      <ion-card-subtitle>Stock exchange of time</ion-card-subtitle>
-    </ion-card-header>
+<ion-content color=secondary [fullscreen]="true">
 
-    <ion-card-content>
-      Figure 1: Card description.
-    </ion-card-content>
-  </ion-card>
-
-  <img class="postImage" alt="Post" src="assets/shapes.svg" />
   <ion-toolbar>
-    Sick new post I just Posted please like and bid!
-    <ion-buttons slot="end">
+    
 
-      <ion-button expand="block" color="primary" (click)="like()">
-        <ion-icon name="thumbs-up-outline"></ion-icon>
-      </ion-button>
+      <ion-buttons color="primary">
+        <div class="s" color= primary-tint>
+        <ion-button fill ="solid" color= var()>
+          Trending
+        </ion-button>
 
-      <ion-button expand="block" color="primary" (click)="dislike()">
-        <ion-icon name="thumbs-down-outline"></ion-icon>
-      </ion-button>
+        <ion-button fill="solid" color= primary>
+          Following
+        </ion-button>
+        </div>
+      </ion-buttons>
+    
 
-      <ion-button expand="block" (click)="bid()">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button expand="block" color="primary" (click)="comment()">
-        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-      </ion-button>
-
-    </ion-buttons>
   </ion-toolbar>
 
   <hr>
+  <div color=secondary>
+    <ion-toolbar color=secondary>
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+    </ion-toolbar>
+    <img class="postImage" alt="Post" src="assets/shapes.svg" />
+    <ion-toolbar color="secondary">
+      <ion-item> Sick new post I just Posted please like and bid!</ion-item>
+      <ion-buttons slot="end">
 
-  <img class="postImage" alt="Post" src="assets/shapes.svg" />
-  <ion-toolbar>
-    Sick new post I just Posted please like and bid!
-    <ion-buttons slot="end">
+        <ion-button expand="block" color="primary" (click)="like()">
+          <ion-icon name="thumbs-up-outline"></ion-icon>
+        </ion-button>
 
-      <ion-button expand="block" color="primary" (click)="like()">
-        <ion-icon name="thumbs-up-outline"></ion-icon>
-      </ion-button>
+        <ion-button expand="block" color="primary" (click)="comment()">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+        </ion-button>
 
-      <ion-button expand="block" color="primary" (click)="dislike()">
-        <ion-icon name="thumbs-down-outline"></ion-icon>
-      </ion-button>
+        <ion-button expand="block" color="primary" (click)="bid()">
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-button>
 
-      <ion-button expand="block" (click)="bid()">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
 
-      <ion-button expand="block" color="primary" (click)="comment()">
-        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-      </ion-button>
-
-    </ion-buttons>
-  </ion-toolbar>
-
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
   <hr>
-
-  <img class="postImage" alt="Post" src="assets/shapes.svg" />
-  <ion-toolbar>
-    Sick new post I just Posted please like and bid!
-    <ion-buttons slot="end">
-
-      <ion-button expand="block" color="primary" (click)="like()">
-        <ion-icon name="thumbs-up-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button expand="block" color="primary" (click)="dislike()">
-        <ion-icon name="thumbs-down-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button expand="block" (click)="bid()">
-        <ion-icon name="cart-outline"></ion-icon>
-      </ion-button>
-
-      <ion-button expand="block" color="primary" (click)="comment()">
-        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-      </ion-button>
-
-    </ion-buttons>
-  </ion-toolbar>
-
 
 </ion-content>
 
-<ion-tabs >
-  <ion-tab-bar class="bottomTabs" slot = "bottom" color = "secondary">
+<ion-toolbar>
+  <ion-tabs style="position:fixed">
+    <ion-tab-bar class="bottomTabs" slot="bottom" color="secondary">
 
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
-      
-    <ion-tab-button tab="search">
-      <ion-icon name="search-outline" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
 
-    <ion-tab-button tab="create">
-      <ion-icon name="add-circle" color = "primary"></ion-icon>
-    </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search-outline" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
 
-    <ion-tab-button tab="portfolio">
-      <ion-icon name="cash-outline" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
+      <ion-tab-button tab="create">
+        <ion-icon name="add-circle" color="primary"></ion-icon>
+      </ion-tab-button>
 
-    <ion-tab-button tab="profile">
-      <ion-icon name="person" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
+      <ion-tab-button tab="portfolio">
+        <ion-icon name="cash-outline" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
 
-  </ion-tab-bar>
-</ion-tabs>
+      <ion-tab-button tab="profile">
+        <ion-icon name="person" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
