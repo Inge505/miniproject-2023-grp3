@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "default": "<REPLACE_ME>",
-    "production": "<REPLACE_ME>",
-    "development": "<REPLACE_ME>"
-  }
-}
