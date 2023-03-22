@@ -1,3 +1,35 @@
-<p color="black">
-  Post Component
-</p>
+<div color=secondary>
+  <ion-toolbar color=secondary>
+    <ion-grid>
+      <ion-row>
+
+        <ion-avatar>
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+        
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  <img class="postImage" alt="Post" src="assets/shapes.svg" />
+  <ion-toolbar color="secondary">
+    <ion-list lines="none"><ion-item> Sick new post I just Posted please like and bid!</ion-item></ion-list>
+    <ion-buttons slot="end">
+
+      <ion-button expand="block" color="primary" (click)="like()">
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button expand="block" color="primary" (click)="comment()">
+        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button expand="block" color="primary" (click)="bid()">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+
+
+    </ion-buttons>
+  </ion-toolbar>
+</div>
+<hr>
