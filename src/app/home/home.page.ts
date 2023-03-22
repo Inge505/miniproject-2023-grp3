@@ -1,6 +1,7 @@
 import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -30,7 +31,7 @@ export class HomePage {
     var trend = <HTMLInputElement>document.getElementById("trendingButton");
     var follow = <HTMLInputElement>document.getElementById("followingButton");
     if (trend != null)
-      trend.style.backgroundColor = ('var(--ion-color-primary-tint)');
+      trend.style.backgroundColor = ('var(--ion-color-primary)');
     if (follow != null)
       follow.style.backgroundColor = ('rgba(255,255,255,0)');
   }
@@ -41,6 +42,6 @@ export class HomePage {
   if (trend != null)
     trend.style.backgroundColor = ('rgba(255,255,255,0)');
   if (follow != null)
-    follow.style.backgroundColor = ('var(--ion-color-primary-tint)');
+    follow.style.backgroundColor = ('var(--ion-color-primary)');
   }
 }
