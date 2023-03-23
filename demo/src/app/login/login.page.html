@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>myApp</title>
+    <link rel="icon" href="http://example.com/favicon.png">
+  </head>
+</html> -->
+
+<ion-content class="login" color="primary">
+  <div
+    style="
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 5%;
+      border-radius: 25%;
+    "
+  >
+    <ion-card class="logincard" slot = "start">
+      <ion-card-header>
+        <img src="assets/logo.png" alt="" />
+        <ion-card-title></ion-card-title>
+        <ion-card-subtitle></ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="ion-text-center">
+          <ion-input placeholder="Username"></ion-input>
+        </ion-item>
+        <br />
+        <ion-item class="ion-text-center">
+          <ion-input type="password" placeholder="passwords"></ion-input>
+        </ion-item>
+
+        <ion-toolbar color="secondary">
+          <ion-checkbox class = "checkbx"
+            slot="start"
+            size="small"
+            color="primary"
+          ></ion-checkbox>
+          <ion-label style="font-size: 70%; color: black" class="ion-text-left"
+            >Remember Me</ion-label
+          >
+          <ion-label
+            slot="end"
+            style="font-size: 70%; color: black"
+            class="ion-text-left"
+            >Forgot Password</ion-label
+          >
+        </ion-toolbar>
+
+        <br />
+
+        <div class="ion-text-center">
+          <ion-button color="primary" shape = "round" (click)="LogMeIn()">Sign in</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <br>
+    
+  
+  </div>
+ 
+  <div class = "lapse">
+    <ion-toolbar color = "primary"> 
+      <ion-button class = "lapsebtn" shape="round" > What is Lapse?</ion-button>
+    </ion-toolbar>
+  </div>
+
+    <div class = lapse2>
+      <ion-toolbar color = "primary" > 
+        <ion-label class = "lapselabl">Don't have an account?</ion-label>
+        <a href = "www.class" style = "color: orange; font-size: 70%; text-decoration: none;"> Sign up here. </a>
+      </ion-toolbar>
+    </div>
+   
+  
+   <br>
+ 
+   
+  
+
+  <!-- <ion-item class = "text" > text </ion-item> -->
+</ion-content>
