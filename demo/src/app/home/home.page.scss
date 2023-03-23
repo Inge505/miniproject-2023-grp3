@@ -31,55 +31,54 @@ body{
 }
 
 ion-col {
-  background-color: #fff;
-  border: solid 1px #fff;
-  color: #fff;
+  background-color: var(--ion-color-secondary);
+  border: solid 1px var(--ion-color-secondary);
+  color: var(--ion-color-secondary);
   text-align: center;
 }
 
-.logoImage{
-  padding: 0;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
-  max-height: auto;
-}
-.postImage{
-  padding: 0;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 100%;
-  max-height: auto;
+.timer{
+  --background: var(--ion-color-primary);
+  border-radius:12px;
+  height:24px;
+  box-shadow: 4px #ccc;
+  margin:auto;
 }
 
+ion-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-hr {
-  width: 90%;
-  height: 2px;
-  background-color: rgb(208,208,208);
+  size: fit-content;
+}
+
+.timerCol{
+  background-color: rgba(0,0,0,0);
+  border:none;
 }
 
 .followingButton{
   
   background-color: var(--ion-color-primary);
   --background:rgba(255,255,255,0);
-  color: #000;
+  color: #fff;
   padding: 0 0;
   margin: auto;
-  border-radius: 30px;
+  border-radius: 12px;
+  height: 24px;
 }
 
 .trendingButton{
   background-color: rgba(255,255,255,0);
   --background:rgba(255,255,255,0);
-  color: #000;
+  color: #fff;
     padding: 0 0;
     margin: auto;
-    border-radius: 40px;
+    border-radius: 12px;
     box-shadow: none;
     border-color: rgba(255,255,255,0);
+    height: 24px;
   }
   
   .buttonContainer{
@@ -87,6 +86,7 @@ hr {
     box-shadow: none;
     width: -moz-fit-content;
     width: fit-content;
+    height: 24px;
     padding: 0 0;
     margin: auto;
     border-radius: 40px;

@@ -12,7 +12,19 @@ export class LapseTabsComponent  implements OnInit {
 
   ngOnInit() {}
 
+  toHomePage() {
+    this.router.navigate(["/home"]);
+  }
   toSearchPage() {
     this.router.navigate(["/search"]);
+  }
+  toCreatePage() {
+    this.router.navigate(["/create"]);
+  }
+  toPortfolioPage() {
+    this.router.navigate(["/portfolio"]);
+  }
+  toProfilePage() {
+    this.router.navigate(["/profile"]);
   }
 }

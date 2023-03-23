@@ -3,23 +3,23 @@
   <ion-tabs class="tabWrapper">
     <ion-tab-bar class="bottomTabs" slot="bottom" color="secondary">
 
-      <ion-tab-button class="bottomBarButton" tab="/home" >
+      <ion-tab-button class="bottomBarButton" (click)="toHomePage()">
         <ion-icon name="home-outline" color="primary" size="small"></ion-icon>
       </ion-tab-button>
 
-      <ion-tab-button class="bottomBarButton" tab="/search">
+      <ion-tab-button class="bottomBarButton" (click)="toSearchPage()">
         <ion-icon name="search-outline" color="primary" size="small"></ion-icon>
       </ion-tab-button>
 
-      <ion-tab-button class="bottomBarButton" tab="/create">
+      <ion-tab-button class="bottomBarButton" (click)= "toCreatePage()">
         <ion-icon name="add-circle" color="primary"></ion-icon>
       </ion-tab-button>
 
-      <ion-tab-button class="bottomBarButton" tab="/portfolio">
+      <ion-tab-button class="bottomBarButton" (click)="toPortfolioPage()">
         <ion-icon name="cash-outline" color="primary" size="small"></ion-icon>
       </ion-tab-button>
 
-      <ion-tab-button class="bottomBarButton" tab="/profile">
+      <ion-tab-button class="bottomBarButton" (click)="toProfilePage()">
         <ion-icon name="person" color="primary" size="small"></ion-icon>
       </ion-tab-button>
 

@@ -1,0 +1,118 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-label color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Profile</ion-label>
+      <ion-badge slot="end" style="position:static">00:00</ion-badge>
+  </ion-toolbar>
+  </ion-header>
+<br>
+  <ion-content>
+  <img class = "img1" src="assets/profilephoto.jpeg" alt="IMAGE" />
+  <ion-grid >
+    <ion-row>
+      <ion-col ></ion-col>
+      <ion-col size = "4"style="text-align: center;"><ion-label style="color:black">@userName</ion-label> </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col ></ion-col>
+      <ion-col size = "6"style="text-align: center;"><ion-label style="color:black;font-size: small;" >123 Followers</ion-label> </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list lines = "none">
+    <ion-item counter="true">
+      <ion-textarea [autoGrow]="true" style =  "background-color: #ffffff; --padding-end: 10px; --padding-start: 10px; border:solid 1px rgb(53,107,89); border-radius: 25%; ">
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-grid >
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col ><ion-icon name="mail-outline" color = "primary"></ion-icon></ion-col>
+      <ion-col ><ion-icon name="pencil-outline" color = "primary"></ion-icon></ion-col>
+      <ion-col ><ion-icon name="settings-outline" color = "primary"></ion-icon></ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row> 
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row>
+      <ion-col size="8">
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE"  />
+      </ion-col>
+      <ion-col size="4">
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE" />
+        </ion-row>
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE" />
+        </ion-row>
+      </ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col size="4">
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE" />
+        </ion-row>
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE"  />
+        </ion-row>
+      </ion-col>
+      <ion-col size="8">
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE"  />
+      </ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col size="8">
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE"  />
+      </ion-col>
+      <ion-col size="4">
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE" />
+        </ion-row>
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE" />
+        </ion-row>
+      </ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col size="4">
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE" />
+        </ion-row>
+        <ion-row>
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE"  />
+        </ion-row>
+      </ion-col>
+      <ion-col size="8">
+          <img class="img2" src="assets/profilephoto.jpeg" alt="IMAGE"  />
+      </ion-col>
+    </ion-row> 
+  </ion-grid>
+
+</ion-content>
+<ion-tabs >
+  <ion-tab-bar class="bottomTabs" slot = "bottom" color = "secondary">
+
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline" color = "primary" size="small"></ion-icon>
+    </ion-tab-button>
+      
+    <ion-tab-button tab="search">
+      <ion-icon name="search-outline" color = "primary" size="small"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="create">
+      <ion-icon name="add-circle" color = "primary"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="portfolio">
+      <ion-icon name="cash-outline" color = "primary" size="small"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="person" color = "primary" size="small"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs> 

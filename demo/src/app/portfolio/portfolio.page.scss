@@ -1,0 +1,19 @@
+.timer{
+    --background: var(--ion-color-primary);
+    border-radius:12px;
+    height:24px;
+    box-shadow: 4px #ccc;
+    margin:auto;
+  }
+  
+  ion-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    size: fit-content;
+  }
+
+  ion-img::part(image) {
+    border-radius: 20px;
+  }

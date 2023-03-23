@@ -8,12 +8,15 @@ import { PortfolioPageRoutingModule } from './portfolio-routing.module';
 
 import { PortfolioPage } from './portfolio.page';
 
+import { ComponentsModule } from "../components/components.module";
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PortfolioPageRoutingModule
+    PortfolioPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PortfolioPage]
 })

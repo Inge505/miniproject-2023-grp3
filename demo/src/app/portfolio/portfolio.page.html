@@ -1,9 +1,41 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>portfolio</ion-title>
-  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <ion-label (click)="toHomePage()" color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Portfolio</ion-label>
+    <ion-badge slot="end" class="timer">134:20:00</ion-badge>
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="postWrapper">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-img src="assets/dog.jpg" ></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-row>
+            <ion-avatar >
+              <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            </ion-avatar>
+            <ion-list lines="none"><ion-item>@username</ion-item></ion-list>
+          </ion-row>
+          <ion-row>
+            <ion-col>Likes</ion-col>
+            <ion-col>Age</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Time</ion-col>
+            <ion-col>Comments</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>Expenses</ion-col>
+            <ion-col>Income</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
+  </div>
 </ion-content>
+
+<app-lapse-tabs></app-lapse-tabs>
