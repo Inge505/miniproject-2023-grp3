@@ -17,4 +17,8 @@ export class SearchPage implements OnInit {
   toHomePage(){
     this.router.navigate(["/home"]);
   }
+  fillBar(category: string){
+    console.log(category);
+   var searchBar=document.getElementById("searchBar")?.setAttribute("value", category);
+  }
 }

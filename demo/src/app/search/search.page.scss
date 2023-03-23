@@ -1,34 +1,47 @@
 .pageHeader {
   --background: var(--ion-color-secondary);
-  border-radius: 30px;
-  box-shadow: 4px #ccc;
+  box-shadow: 0 3px 2px #ccc;
 }
 
 .headerToolbar {
   --background: var(--ion-color-secondary);
 }
 
+
+
 .searchBar {
+
   margin:auto;
   padding:0;
   --background: rgba(0,0,0,0);
   border: solid 1px var(--ion-color-primary-shade);
-  border-radius:25px;
-  height:50px;
+  border-radius:12px;
+  height:24px;
+  --icon-color: var(--ion-color-primary-shade);
+  --placeholder-opacity: 1;
+  --placeholder-color:black;
   //var(--ion-color-shade)
 }
 
-.timerText{
-  color:var(--ion-color-secondary);
+ion-img::part(image) {
+  border-radius: 20px;
 }
 
 .timer{
   --background: var(--ion-color-primary);
-  border-radius: 30px;
+  border-radius:12px;
+  height:24px;
   box-shadow: 4px #ccc;
   margin:auto;
 }
 
+ion-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  size: fit-content;
+}
 .bottomBarButton {
   border-radius: var(--bottomNavBarBorderRadius) var(--bottomNavBarBorderRadius) 0 0;
 }
@@ -41,4 +54,32 @@
 .bottomToolbar {
   border-radius: var(--bottomNavBarBorderRadius) var(--bottomNavBarBorderRadius) 0 0;
 
+}
+
+.categoryWrapper{
+  box-shadow: 0 3px 2px 1px #eeeeee;
+}
+
+.nature{
+  --background:rgb(150,81,255);
+}
+
+.funny{
+  --background:rgb(177,45,45);
+}
+
+.opinion{
+  --background:rgb(184,219,99);
+}
+
+.sports{
+  --background:rgb(50,0,219);
+}
+
+.music{
+  --background:rgb(228,137,60);
+}
+
+.food{
+  --background:rgb(210,81,255);
 }

@@ -1,14 +1,12 @@
-<ion-header class="pageHeader">
+<ion-header no-border class="pageHeader">
   <ion-toolbar class="headerToolbar">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-searchbar class="searchBar" placeholder="Search"></ion-searchbar>
-
+          <ion-searchbar id = "searchBar" search-icon="search-outline" class="searchBar" placeholder="Search"></ion-searchbar>
         </ion-col>
         <ion-col size="auto">
-          <ion-list lines="none"><ion-item class="ion-text-center" 0class="timer"><ion-text class="timerText">139:34</ion-text></ion-item></ion-list>
-
+          <ion-badge class="timer">134:20:00</ion-badge>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -16,6 +14,172 @@
 </ion-header>
 
 <ion-content>
+
+
+  <div class="categoryWrapper" (click)="fillBar('#nature')">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <ion-badge class="nature">#nature</ion-badge>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        
+      </ion-row>
+      <ion-row>
+
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+  <div class="categoryWrapper" (click)="fillBar('#funny')">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <ion-badge class="funny">#funny</ion-badge>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+
+      </ion-row>
+      <ion-row>
+
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+  <div class="categoryWrapper" (click)="fillBar('#opinion')">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <ion-badge class="opinion">#opinion</ion-badge>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+
+      </ion-row>
+      <ion-row>
+
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+  <div class="categoryWrapper" (click)="fillBar('#sports')">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <ion-badge class="sports">#sports</ion-badge>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+
+      </ion-row>
+      <ion-row>
+
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+  <div class="categoryWrapper" (click)="fillBar('#music')">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <ion-badge class="music">#music</ion-badge>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+
+      </ion-row>
+      <ion-row>
+
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+  <div class="categoryWrapper" (click)="fillBar('#food')">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col>
+          <ion-badge class="food">#food</ion-badge>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+
+      </ion-row>
+      <ion-row>
+
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img border-radius="15px" src="assets/nature.jpg"></ion-img>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+ 
+
+
 
 </ion-content>
 
