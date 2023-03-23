@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router: Router, private renderer: Renderer2) { }
+  constructor(private router: Router) { }
 
   logout() {
     this.router.navigate(['/login']);
@@ -43,5 +43,9 @@ export class HomePage {
     trend.style.backgroundColor = ('rgba(255,255,255,0)');
   if (follow != null)
     follow.style.backgroundColor = ('var(--ion-color-primary)');
+  }
+
+  toSearchPage(){
+    this.router.navigate(["/search"]);
   }
 }

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+<ion-toolbar class="bottomToolbar">
+  <ion-tabs class="tabWrapper" style="position:fixed">
+    <ion-tab-bar class="bottomTabs" slot="bottom" color="secondary">
+
+      <ion-tab-button class="bottomBarButton" tab="home" (click)="toHomePage()">
+        <ion-icon name="home-outline" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button class="bottomBarButton" tab="search">
+        <ion-icon name="search-outline" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button class="bottomBarButton" tab="create">
+        <ion-icon name="add-circle" color="primary"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button class="bottomBarButton" tab="portfolio">
+        <ion-icon name="cash-outline" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button class="bottomBarButton" tab="profile">
+        <ion-icon name="person" color="primary" size="small"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>
