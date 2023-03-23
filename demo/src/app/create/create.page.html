@@ -1,0 +1,82 @@
+<ion-content>
+ 
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-label color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Create</ion-label>
+      <ion-badge slot="end" style="position:static">00:00</ion-badge>
+  </ion-toolbar>
+  </ion-header>
+
+
+<div style="width: 100%;
+
+border-bottom: 1px solid grey;
+position: absolute; "></div>
+
+<br>
+
+    <div
+    style=" border-radius: 5%; margin: auto; width: 80%; height: 40%; background-color: rgb(53,107,89); text-align: center; position: relative;">
+    <ion-icon style = "font-size: 128px; position: relative; top:25%"name="share-outline" color = "secondary"></ion-icon>  
+  </div>
+
+  <br>
+ 
+  <ion-list lines = "none">
+    <ion-item counter="true">
+      <ion-textarea [autoGrow]="true" maxlength="100" style =  "background-color: #ffffff; --padding-end: 10px; --padding-start: 10px; border:solid 1px rgb(53,107,89); border-radius: 25%; ">
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+  
+    <!-- <div style = "
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    text-align: center;">
+      <ion-label>0/100</ion-label>
+    </div> -->
+    
+    <!-- <div style="width: 100%;
+
+border-bottom: 1px solid grey;
+position: absolute; "></div> -->
+    <ion-grid >
+      <ion-row>
+        <ion-col size = "4" style="text-align: center;"> <ion-button size = "small" color = "success">#nature</ion-button> </ion-col>
+        <ion-col size = "4"style="text-align: center;"><ion-button size = "small" color = "warning">#funny</ion-button> </ion-col>
+        <ion-col size = "4"style="text-align: center;"><ion-button size = "small" color = "tertiary">#opinion</ion-button> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size = "4" style="text-align: center;"> <ion-button size = "small" color = "medium">#music</ion-button> </ion-col>
+        <ion-col size = "4"style="text-align: center;"><ion-button size = "small"color = "danger">#sports</ion-button> </ion-col>
+        <ion-col size = "4"style="text-align: center;"><ion-button size = "small"color = "light">#food</ion-button> </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <div style="width: 100%;
+
+    border-bottom: 1px solid grey;
+    position: absolute; "></div>
+
+<ion-list lines = "none">
+  <ion-item>
+    <ion-label>For Sale:</ion-label>
+    <ion-toggle style="width:20%;height: 50%;"></ion-toggle>
+  </ion-item>
+  </ion-list>
+
+  <ion-grid style="position: relative; bottom:2%">
+    <ion-row style = "height: 30%;">
+      <ion-col size = "4"> <ion-label color = "tertiary"  style = "font-size: 105%; font:bold">Starting Price:</ion-label></ion-col>
+      <ion-col size = "4"><ion-input placeholder="100"  type = "number"  color = "primary" style="height: 50%; font-size: 200%;"></ion-input></ion-col>
+      <ion-col size = "4"><ion-label color = "tertiary" style = "font-size: 105%; font:bold">Minutes</ion-label></ion-col>
+    </ion-row>
+  </ion-grid>
+   <div style = "text-align: center; position: relative; bottom:5%;">
+    <ion-button expand="full" shape="round" >POST</ion-button>
+   </div>
+    
+    
+
+</ion-content>
