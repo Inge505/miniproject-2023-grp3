@@ -1,9 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
+ 
+
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-label color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Settings</ion-label>
+      <ion-badge slot="end" style="position:static">00:00</ion-badge>
+  </ion-toolbar>
+  </ion-header>
+
+
+<div style="width: 100%;
+
+border-bottom: 1px solid grey;
+position: absolute; "></div>
+
+<br>
+  
+ 
+  
+<br>
+  <ion-list  lines="none">
+    <ion-item>
+      <ion-label>Private Account:</ion-label>
+      <ion-toggle slot="end"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Change Username:</ion-label>
+      <ion-icon slot= "end" name="create-outline"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>Change Password:</ion-label>
+      <ion-icon slot= "end" name="create-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+ 
 
 </ion-content>
