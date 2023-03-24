@@ -1,8 +1,10 @@
 import {
     AccountDetailsUpdatedEvent,
+    PostDetailsUpdatedEvent,
     AddressDetailsUpdatedEvent,
     ContactDetailsUpdatedEvent,
     IAccountDetails,
+    IPostDetails,
     IAddressDetails,
     IContactDetails,
     IOccupationDetails,
@@ -20,6 +22,7 @@ export class Profile extends AggregateRoot implements IProfile {
   constructor(
     public userId: string,
     public accountDetails?: IAccountDetails | null | undefined,
+    public postDetails?: IPostDetails | null | undefined,
     public personalDetails?: IPersonalDetails | null | undefined,
     public contactDetails?: IContactDetails | null | undefined,
     public addressDetails?: IAddressDetails | null | undefined,
@@ -34,6 +37,7 @@ export class Profile extends AggregateRoot implements IProfile {
     const instance = new Profile(
       profile.userId,
       profile.accountDetails,
+      profile.postDetails,
       profile.personalDetails,
       profile.contactDetails,
       profile.addressDetails,
@@ -93,6 +97,7 @@ export class Profile extends AggregateRoot implements IProfile {
   }
 
   updateAccountDetails(accountDetails: IAccountDetails) {
+    console.log("In model cause im sexyyyy");
     if (!this.accountDetails) this.accountDetails = {};
     this.accountDetails.displayName = accountDetails.displayName
       ? accountDetails.displayName
@@ -117,13 +122,39 @@ export class Profile extends AggregateRoot implements IProfile {
       return;
     }
 
-    if (!this.accountDetails.displayName || !this.accountDetails.email) {
+    if (this.accountDetails.displayName || !this.accountDetails.email) {
       this.accountDetails.status = ProfileStatus.INCOMPLETE;
       this.status = ProfileStatus.INCOMPLETE;
       return;
     }
 
     this.accountDetails.status = ProfileStatus.COMPLETE;
+    return;
+  }
+
+  updatePostDetails(postDetails: IPostDetails) {
+    if (!this.postDetails) this.postDetails = {};
+    this.postDetails.comment = postDetails.comment
+      ? postDetails.comment
+      : this.postDetails.comment;
+    this.apply(new PostDetailsUpdatedEvent(this.toJSON()));
+  }
+
+  private updatePostDetailsStatus() {
+    if (!this.postDetails) {
+      this.postDetails = {};
+      this.postDetails.status = ProfileStatus.INCOMPLETE;
+      this.status = ProfileStatus.INCOMPLETE;
+      return;
+    }
+
+    if (!this.postDetails.comment ) {
+      this.postDetails.status = ProfileStatus.INCOMPLETE;
+      this.status = ProfileStatus.INCOMPLETE;
+      return;
+    }
+
+    this.postDetails.status = ProfileStatus.COMPLETE;
     return;
   }
 
@@ -212,13 +243,15 @@ export class Profile extends AggregateRoot implements IProfile {
     this.updateContactDetailsStatus();
     this.updatePersonalDetailsStatus();
     this.updateOccupationDetailsStatus();
+    this.updatePostDetailsStatus();
 
     if (
       this.accountDetails?.status === ProfileStatus.COMPLETE &&
       this.addressDetails?.status === ProfileStatus.COMPLETE &&
       this.contactDetails?.status === ProfileStatus.COMPLETE &&
       this.personalDetails?.status === ProfileStatus.COMPLETE &&
-      this.occupationDetails?.status === ProfileStatus.COMPLETE
+      this.occupationDetails?.status === ProfileStatus.COMPLETE &&
+      this.postDetails?.status === ProfileStatus.COMPLETE
     ) {
       this.status = ProfileStatus.COMPLETE;
     }
@@ -233,6 +266,7 @@ export class Profile extends AggregateRoot implements IProfile {
       personalDetails: this.personalDetails,
       contactDetails: this.contactDetails,
       addressDetails: this.addressDetails,
+      postDetails: this.postDetails,
       occupationDetails: this.occupationDetails,
       status: this.status,
       created: this.created,

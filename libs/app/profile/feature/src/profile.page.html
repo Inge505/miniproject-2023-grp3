@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-align-items-center">
-      Profile
+      ProfileD
       <ng-container *ngIf="(profile$ | async) as profile;">
         <ion-icon
           *ngIf="profile.status == 'Incomplete'"
@@ -39,6 +39,7 @@
     <ms-profile-personal-details-component></ms-profile-personal-details-component>
     <ms-profile-contact-details-component></ms-profile-contact-details-component>
     <ms-profile-address-details-component></ms-profile-address-details-component>
+    <ms-profile-post-details-component></ms-profile-post-details-component>
     <ms-profile-occupation-details-component></ms-profile-occupation-details-component>
   </ng-container>
   <ng-template #noProfile>

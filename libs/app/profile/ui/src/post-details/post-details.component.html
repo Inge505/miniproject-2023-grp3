@@ -1,0 +1,63 @@
+<ng-container *ngIf="profile$ | async as profile; else loading">
+  <form
+    [formGroup]="postDetailsForm"
+    ngxsForm="profile.postDetailsForm"
+    (submit)="updatePostDetails()">
+    <ion-card *ngIf="profile.postDetails as postDetails">
+      <ion-card-header>
+        <ion-card-title class="ion-align-items-center">
+          Post Details
+          <ion-icon
+            *ngIf="postDetails.status == 'Incomplete'"
+            color="danger"
+            name="alert-circle-outline"></ion-icon>
+          <ion-icon
+            *ngIf="postDetails.status == 'Complete'"
+            color="success"
+            name="checkmark-circle-outline"></ion-icon>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item class="ion-no-padding">
+            <ion-label position="floating" class="required"
+              >Comment</ion-label
+            >
+            <ion-input
+              type="text"
+              minlength="4"
+              maxlength="64"
+              required="true"
+              placeholder="Enter comment"
+              formControlName="comment"
+              [value]="postDetails.comment"
+              autocomplete="name"></ion-input>
+          </ion-item>
+          <ion-text
+            *ngIf="
+              comment?.invalid &&
+              (comment?.dirty || comment?.touched)
+            "
+            class="ion-padding-start"
+            color="danger">
+            <small>{{ commentError }}</small>
+          </ion-text>
+        </ion-list>
+      </ion-card-content>
+      <ion-button fill="clear" class="ion-float-right" type="submit"
+        >Save</ion-button>
+    </ion-card>
+  </form>
+</ng-container>
+<ng-template #loading>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ngx-skeleton-loader
+          count="1"
+          [theme]="{ height: '150px' }"
+          appearance="line"></ngx-skeleton-loader>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ng-template>

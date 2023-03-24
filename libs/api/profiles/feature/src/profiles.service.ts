@@ -1,6 +1,8 @@
 import {
     IUpdateAccountDetailsRequest,
     IUpdateAccountDetailsResponse,
+    IUpdatePostDetailsRequest,
+    IUpdatePostDetailsResponse,
     IUpdateAddressDetailsRequest,
     IUpdateAddressDetailsResponse,
     IUpdateContactDetailsRequest,
@@ -10,6 +12,7 @@ import {
     IUpdatePersonalDetailsRequest,
     IUpdatePersonalDetailsResponse,
     UpdateAccountDetailsCommand,
+    UpdatePostDetailsCommand,
     UpdateAddressDetailsCommand,
     UpdateContactDetailsCommand,
     UpdateOccupationDetailsCommand,
@@ -29,6 +32,15 @@ export class ProfilesService {
       UpdateAccountDetailsCommand,
       IUpdateAccountDetailsResponse
     >(new UpdateAccountDetailsCommand(request));
+  }
+
+  async updatePostDetails(
+    request: IUpdatePostDetailsRequest
+  ): Promise<IUpdatePostDetailsResponse> {
+    return await this.commandBus.execute<
+      UpdatePostDetailsCommand,
+      IUpdatePostDetailsResponse
+    >(new UpdatePostDetailsCommand(request));
   }
 
   async updateAddressDetails(

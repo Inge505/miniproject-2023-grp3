@@ -5,3 +5,4 @@ export * from './update-contact-details.response';
 export * from './update-occupation-details.response';
 export * from './update-personal-details.response';
 export * from './update-profile-status.response';
+export * from './update-post-details.response';

@@ -6,6 +6,7 @@ import {
     UpdateAccountDetailsHandler,
     UpdateAddressDetailsHandler,
     UpdateContactDetailsHandler,
+    UpdatePostDetailsHandler,
     UpdateOccupationDetailsHandler,
     UpdatePersonalDetailsHandler,
     UpdateProfileStatusHandler
@@ -15,6 +16,7 @@ import {
     AddressDetailsUpdatedHandler,
     ContactDetailsUpdatedHandler,
     OccupationDetailsUpdatedHandler,
+    PostDetailsUpdatedHandler,
     PersonalDetailsUpdatedHandler,
     ProfileCreatedHandler,
     ProfileStatusUpdatedHandler
@@ -27,6 +29,7 @@ export const CommandHandlers = [
   UpdateAddressDetailsHandler,
   UpdatePersonalDetailsHandler,
   UpdateOccupationDetailsHandler,
+  UpdatePostDetailsHandler,
   UpdateAccountDetailsHandler,
   UpdateProfileStatusHandler,
 ];
@@ -36,6 +39,7 @@ export const EventHandlers = [
   AddressDetailsUpdatedHandler,
   PersonalDetailsUpdatedHandler,
   OccupationDetailsUpdatedHandler,
+  PostDetailsUpdatedHandler,
   AccountDetailsUpdatedHandler,
   ProfileStatusUpdatedHandler,
 ];

@@ -17,7 +17,7 @@ export class UpdateAccountDetailsHandler
   ) {}
 
   async execute(command: UpdateAccountDetailsCommand) {
-    console.log(`${UpdateAccountDetailsHandler.name}`);
+    console.debug(`${UpdateAccountDetailsHandler.name}`+ "in commands excute");
 
     const request = command.request;
     const profileDoc = await this.repository.findOne(request.profile);

@@ -2,6 +2,8 @@ import { ProfilesService } from '@mp/api/profiles/feature';
 import {
     IUpdateAccountDetailsRequest,
     IUpdateAccountDetailsResponse,
+    IUpdatePostDetailsRequest,
+    IUpdatePostDetailsResponse,
     IUpdateAddressDetailsRequest,
     IUpdateAddressDetailsResponse,
     IUpdateContactDetailsRequest,
@@ -22,6 +24,16 @@ export const updateAccountDetails = functions.https.onCall(
     const app = await NestFactory.createApplicationContext(CoreModule);
     const service = app.get(ProfilesService);
     return service.updateAccountDetails(request);
+  }
+);
+
+export const updatePostDetails = functions.https.onCall(
+  async (
+    request: IUpdatePostDetailsRequest
+  ): Promise<IUpdatePostDetailsResponse> => {
+    const app = await NestFactory.createApplicationContext(CoreModule);
+    const service = app.get(ProfilesService);
+    return service.updatePostDetails(request);
   }
 );
 

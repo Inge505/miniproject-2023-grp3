@@ -1,5 +1,4 @@
 import { IProfile } from '@mp/api/profiles/util';
-
 export class Logout {
   static readonly type = '[Profile] Logout';
 }
@@ -15,6 +14,10 @@ export class SetProfile {
 
 export class UpdateAccountDetails {
   static readonly type = '[Profile] UpdateAccountDetails';
+}
+
+export class UpdatePostDetails {
+  static readonly type = '[Profile] UpdatePostDetails';
 }
 
 export class UpdateAddressDetails {

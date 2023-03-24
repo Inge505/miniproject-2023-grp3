@@ -31,6 +31,10 @@ export class CreateProfileHandler
         photoURL,
         status: ProfileStatus.INCOMPLETE,
       },
+      postDetails: {
+        comment : null,
+        status: ProfileStatus.INCOMPLETE,
+      },
       personalDetails: {
         age: null,
         gender: null,

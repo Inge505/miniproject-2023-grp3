@@ -4,4 +4,5 @@ export * from './update-address-details.request';
 export * from './update-contact-details.request';
 export * from './update-occupation-details.request';
 export * from './update-personal-details.request';
+export * from './update-post-details.request';
 export * from './update-profile-status.request';

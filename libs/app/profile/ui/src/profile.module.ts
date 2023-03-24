@@ -6,6 +6,7 @@ import { AddressDetailsModule } from './address-details';
 import { ContactDetailsModule } from './contact-details';
 import { OccupationDetailsModule } from './occupation-details';
 import { PersonalDetailsModule } from './personal-details';
+import { PostDetailsModule } from './post-details';
 import { ProfileStatusModule } from './profile-status';
 
 @NgModule({
@@ -17,10 +18,12 @@ import { ProfileStatusModule } from './profile-status';
     ContactDetailsModule,
     OccupationDetailsModule,
     PersonalDetailsModule,
+    PostDetailsModule,
     ProfileStatusModule,
   ],
   exports: [
     AccountDetailsModule,
+    PostDetailsModule,
     AddressDetailsModule,
     ContactDetailsModule,
     OccupationDetailsModule,

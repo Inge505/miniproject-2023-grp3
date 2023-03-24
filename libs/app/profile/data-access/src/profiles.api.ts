@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { doc, docData, Firestore } from '@angular/fire/firestore';
+import { collection, collectionData, CollectionReference, doc, docData, Firestore, query } from '@angular/fire/firestore';
 import { Functions, httpsCallable } from '@angular/fire/functions';
 import {
     IProfile,
     IUpdateAccountDetailsRequest,
     IUpdateAccountDetailsResponse,
+    IUpdatePostDetailsRequest,
+    IUpdatePostDetailsResponse,
     IUpdateAddressDetailsRequest,
     IUpdateAddressDetailsResponse,
     IUpdateContactDetailsRequest,
@@ -12,7 +14,7 @@ import {
     IUpdateOccupationDetailsRequest,
     IUpdateOccupationDetailsResponse,
     IUpdatePersonalDetailsRequest,
-    IUpdatePersonalDetailsResponse
+    IUpdatePersonalDetailsResponse,
 } from '@mp/api/profiles/util';
 
 @Injectable()
@@ -35,6 +37,7 @@ export class ProfilesApi {
     return docData(docRef, { idField: 'id' });
   }
 
+
   async updateAccountDetails(request: IUpdateAccountDetailsRequest) {
     return await httpsCallable<
       IUpdateAccountDetailsRequest,
@@ -42,6 +45,16 @@ export class ProfilesApi {
     >(
       this.functions,
       'updateAccountDetails'
+    )(request);
+  }
+
+  async updatePostDetails(request: IUpdatePostDetailsRequest) {
+    return await httpsCallable<
+      IUpdatePostDetailsRequest,
+      IUpdatePostDetailsResponse
+    >(
+      this.functions,
+      'updatePostDetails'
     )(request);
   }
 

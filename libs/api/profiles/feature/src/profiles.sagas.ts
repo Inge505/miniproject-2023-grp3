@@ -1,5 +1,6 @@
 import {
     AccountDetailsUpdatedEvent,
+    PostDetailsUpdatedEvent,
     AddressDetailsUpdatedEvent,
     ContactDetailsUpdatedEvent,
     CreateProfileCommand,
@@ -33,6 +34,19 @@ export class ProfilesSagas {
       ofType(AccountDetailsUpdatedEvent),
       map(
         (event: AccountDetailsUpdatedEvent) =>
+          new UpdateProfileStatusCommand({ profile: event.profile })
+      )
+    );
+  };
+
+  @Saga()
+  onPostDetailsUpdated = (
+    events$: Observable<any>
+  ): Observable<ICommand> => {
+    return events$.pipe(
+      ofType(PostDetailsUpdatedEvent),
+      map(
+        (event: PostDetailsUpdatedEvent) =>
           new UpdateProfileStatusCommand({ profile: event.profile })
       )
     );

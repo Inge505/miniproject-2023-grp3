@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import {
     AgeGroup,
@@ -6,10 +8,11 @@ import {
     HouseholdIncome,
     IProfile,
     IUpdateAccountDetailsRequest,
+    IUpdatePostDetailsRequest,
     IUpdateAddressDetailsRequest,
     IUpdateContactDetailsRequest,
     IUpdateOccupationDetailsRequest,
-    IUpdatePersonalDetailsRequest
+    IUpdatePersonalDetailsRequest,
 } from '@mp/api/profiles/util';
 import { AuthState } from '@mp/app/auth/data-access';
 import { Logout as AuthLogout } from '@mp/app/auth/util';
@@ -22,11 +25,12 @@ import {
     UpdateAddressDetails,
     UpdateContactDetails,
     UpdateOccupationDetails,
-    UpdatePersonalDetails
+    UpdatePersonalDetails,
+    UpdatePostDetails,
 } from '@mp/app/profile/util';
 import { Action, Selector, State, StateContext, Store } from '@ngxs/store';
 import produce from 'immer';
-import { tap } from 'rxjs';
+import { debounceTime, tap } from 'rxjs';
 import { ProfilesApi } from './profiles.api';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -38,6 +42,14 @@ export interface ProfileStateModel {
       email: string | null;
       photoURL: string | null;
       password: string | null;
+    };
+    dirty: false;
+    status: string;
+    errors: object;
+  };
+  postDetailsForm: {
+    model: {
+      comment: string | null;
     };
     dirty: false;
     status: string;
@@ -96,6 +108,14 @@ export interface ProfileStateModel {
       status: '',
       errors: {},
     },
+    postDetailsForm: {
+      model: {
+        comment: null,
+      },
+      dirty: false,
+      status: '',
+      errors: {},
+    },
     addressDetailsForm: {
       model: {
         residentialArea: null,
@@ -139,12 +159,32 @@ export class ProfileState {
   constructor(
     private readonly profileApi: ProfilesApi,
     private readonly store: Store
-  ) {}
+  ) { this.subscribeToPostDetailsForm();}
 
   @Selector()
   static profile(state: ProfileStateModel) {
     return state.profile;
   }
+
+  @Selector()
+static postDetailsForm(state: ProfileStateModel) {
+  return state.postDetailsForm;
+}
+getCommentByUserId(userId: string): Observable<string | null> {
+  return this.profileApi
+    .profile$(userId)
+    .pipe(map((profile: IProfile) => profile.postDetails?.comment ?? null));
+}
+subscribeToPostDetailsForm() {
+  this.store
+    .select(ProfileState.postDetailsForm)
+    .pipe(debounceTime(500))
+    .subscribe((postDetailsForm) => {
+      if (postDetailsForm.dirty) {
+        this.store.dispatch(new UpdatePostDetails());
+      }
+    });
+}
 
   @Action(Logout)
   async logout(ctx: StateContext<ProfileStateModel>) {
@@ -169,6 +209,7 @@ export class ProfileState {
       })
     );
   }
+
 
   @Action(UpdateAccountDetails)
   async updateAccountDetails(ctx: StateContext<ProfileStateModel>) {
@@ -205,6 +246,31 @@ export class ProfileState {
     }
   }
 
+  @Action(UpdatePostDetails)
+  async updatePostDetails(ctx: StateContext<ProfileStateModel>) {
+    try {
+      const state = ctx.getState();
+      const userId = state.profile?.userId;
+      const comment = state.postDetailsForm.model.comment;
+
+      if (!userId || !comment)
+        return ctx.dispatch(new SetError('UserId or cellphone not set'));
+
+      const request: IUpdatePostDetailsRequest = {
+        profile: {
+          userId,
+          postDetails: {
+            comment,
+          },
+        },
+      };
+      const responseRef = await this.profileApi.updatePostDetails(request);
+      const response = responseRef.data;
+      return ctx.dispatch(new SetProfile(response.profile));
+    } catch (error) {
+      return ctx.dispatch(new SetError((error as Error).message));
+    }
+  }
   @Action(UpdateContactDetails)
   async updateContactDetails(ctx: StateContext<ProfileStateModel>) {
     try {

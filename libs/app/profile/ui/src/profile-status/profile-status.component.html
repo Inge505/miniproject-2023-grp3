@@ -31,6 +31,17 @@
         Account Details <ion-icon name="alert-circle-outline"></ion-icon>
       </ion-chip>
 
+      <ion-chip
+        *ngIf="profile.postDetails?.status == 'Complete'"
+        color="success">
+        Post Details <ion-icon name="checkmark-circle-outline"></ion-icon>
+      </ion-chip>
+      <ion-chip
+        *ngIf="profile.postDetails?.status == 'Incomplete'"
+        color="danger">
+        Post Details <ion-icon name="alert-circle-outline"></ion-icon>
+      </ion-chip>
+
       <!-- PERSONAL DETAILS -->
       <ion-chip
         *ngIf="profile.personalDetails?.status == 'Complete'"
@@ -78,6 +89,13 @@
         color="danger">
         Occupation Details <ion-icon name="alert-circle-outline"></ion-icon>
       </ion-chip>
+      <div *ngIf="comment$ | async as comment">
+        <ion-chip *ngIf="comment" > {{ comment }} 
+          <ion-icon name="checkmark-circle-outline" *ngIf="comment">
+        </ion-icon> </ion-chip>
+        
+        <ion-icon name="alert-circle-outline" *ngIf="!comment">No comment yet.</ion-icon>
+      </div>
     </ion-card-content>
     <ion-button
       fill="clear"
