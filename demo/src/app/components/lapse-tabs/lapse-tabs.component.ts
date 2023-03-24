@@ -25,6 +25,6 @@ export class LapseTabsComponent  implements OnInit {
     this.router.navigate(["/portfolio"]);
   }
   toProfilePage() {
-    this.router.navigate(["/profile"]);
+    this.router.navigate(["/profile-page"]);
   }
 }

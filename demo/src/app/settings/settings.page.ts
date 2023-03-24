@@ -12,6 +12,6 @@ export class SettingsPage implements OnInit {
   ngOnInit() {
   }
   toProfilePage() {
-    this.router.navigate(["/profile"]);
+    this.router.navigate(["/profile-page"]);
   }
 }

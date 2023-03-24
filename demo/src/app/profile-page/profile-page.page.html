@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar color="secondary">
-      <ion-label color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Profile</ion-label>
+      <ion-label (click) = "toHomePage()" color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Profile</ion-label>
       <ion-badge slot="end" style="position:static">00:00</ion-badge>
   </ion-toolbar>
   </ion-header>
@@ -30,7 +30,7 @@
       <ion-col size="3"></ion-col>
       <ion-col ><ion-icon name="mail-outline" color = "primary"></ion-icon></ion-col>
       <ion-col ><ion-icon name="pencil-outline" color = "primary"></ion-icon></ion-col>
-      <ion-col ><ion-icon name="settings-outline" color = "primary"></ion-icon></ion-col>
+      <ion-col (click)="toSettingsPage()"><ion-icon name="settings-outline" color = "primary"></ion-icon></ion-col>
       <ion-col size="3"></ion-col>
     </ion-row> 
   </ion-grid>
@@ -91,28 +91,5 @@
   </ion-grid>
 
 </ion-content>
-<ion-tabs >
-  <ion-tab-bar class="bottomTabs" slot = "bottom" color = "secondary">
 
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
-      
-    <ion-tab-button tab="search">
-      <ion-icon name="search-outline" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="create">
-      <ion-icon name="add-circle" color = "primary"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="portfolio">
-      <ion-icon name="cash-outline" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
-
-    <ion-tab-button tab="profile">
-      <ion-icon name="person" color = "primary" size="small"></ion-icon>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs> 
+<app-lapse-tabs></app-lapse-tabs>

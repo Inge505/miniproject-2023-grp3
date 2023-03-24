@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.page.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePagePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  toHomePage() {
+    this.router.navigate(["/home"]);
+  }
+
+  toSettingsPage() {
+    this.router.navigate(["/settings"]);
+  }
 }
