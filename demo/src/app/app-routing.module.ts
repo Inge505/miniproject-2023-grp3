@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'profile-page',
     loadChildren: () => import('./profile-page/profile-page.module').then( m => m.ProfilePagePageModule)
   },
+  {
+    path: 'comment',
+    loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
+  },
 
 
 ];
