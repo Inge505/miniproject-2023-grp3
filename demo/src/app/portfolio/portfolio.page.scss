@@ -17,3 +17,12 @@
   ion-img::part(image) {
     border-radius: 20px;
   }
+
+  .postWrapper{
+    font-size: 12px;
+    box-shadow: 0 3px 2px 1px #eeeeee;
+  }
+
+  ion-icon{
+    color: var(--ion-color-tertiary);
+  }
