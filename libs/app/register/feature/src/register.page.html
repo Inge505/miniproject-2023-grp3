@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -94,4 +94,98 @@
 
 <ion-footer collapse="condense" class="ion-padding ion-text-center">
   <ms-copyright-component></ms-copyright-component>
-</ion-footer>
+</ion-footer> -->
+
+<ion-content class="register" color="primary">
+  <div
+    style="
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 5%;
+      border-radius: 25%;
+    "
+  >
+  <br>
+
+    <ion-card class="logincard" slot = "start">
+      <ion-card-header>
+        <img src="assets/logos/logo.png" alt="" />
+        <ion-card-title></ion-card-title>
+        <ion-card-subtitle></ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="registerForm" ngxsForm="register.registerForm" (submit)="register()">
+    <ion-list class="ion-padding-vertical">
+      <ion-item>
+        <ion-label position="floating" class="required">Email</ion-label>
+        <ion-input
+          type="email"
+          minlength="6"
+          maxlength="64"
+          placeholder="Enter Email"
+          required="true"
+          autocomplete="email"
+          formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" class="required">Username</ion-label>
+        <ion-input
+          minlength="6"
+          maxlength="20"
+          placeholder="Enter Username"
+          required="true"
+          ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" class="required">Password</ion-label>
+        <ion-input
+          [type]="showPassword ? 'text' : 'password'"
+          minlength="6"
+          maxlength="64"
+          placeholder="Enter Password"
+          required="true"
+          autocomplete="password"
+          formControlName="password"></ion-input>
+        <ion-icon
+          [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"
+          slot="end"
+          class="ion-align-self-center"
+          (click)="toggleShowPassword()"></ion-icon>
+      </ion-item>
+
+      
+    </ion-list>
+    <div class="ion-text-center">
+      <ion-button
+            color = "primary" shape = "round"
+            [disabled]="!this.registerForm.valid || (busy$ | async)"
+            type="submit">
+            <ion-spinner *ngIf="busy$ | async"></ion-spinner>
+            <ion-text>Register</ion-text>
+          </ion-button>
+    </div>
+   
+  </form>
+       
+
+       
+
+       
+      </ion-card-content>
+    </ion-card>
+    <br>
+    
+  
+  </div>
+ 
+ 
+   
+  
+ 
+   
+  </ion-content> 
