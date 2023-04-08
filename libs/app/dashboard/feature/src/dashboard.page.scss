@@ -99,9 +99,10 @@ ion-item{
       .timer{
         --background: var(--ion-color-primary);
         border-radius:12px;
-        height:24px;
+        height:20px;
         box-shadow: 4px #ccc;
         margin:auto;
+        padding:3px;
       }
       
       ion-badge {
@@ -124,8 +125,10 @@ ion-item{
         color: #fff;
         padding: 0 0;
         margin: auto;
-        border-radius: 12px;
-        height: 24px;
+        margin-bottom:8px;
+        border-radius: 10px;
+        height: 20px;
+
       }
       
       .trendingButton{
@@ -134,10 +137,11 @@ ion-item{
         color: #fff;
           padding: 0 0;
           margin: auto;
-          border-radius: 12px;
+        margin-bottom:8px;
+          border-radius: 10px;
           box-shadow: none;
           border-color: rgba(255,255,255,0);
-          height: 24px;
+          height: 20px;
         }
         
         .buttonContainer{
@@ -145,11 +149,12 @@ ion-item{
           box-shadow: none;
           width: -moz-fit-content;
           width: fit-content;
-          height: 24px;
+          height: 20px;
           padding: 0 0;
           margin: auto;
           border-radius: 40px;
-          background-color: var(--ion-color-primary-tint);
+          background-color: #{'var(--ion-color-primary-tint)'};
+          opacity: 0.9;
         }
         
         ion-item{
