@@ -15,6 +15,6 @@ export class SplashPage implements OnInit {
     setTimeout(()=>{
       this.router.navigate(['/welcome']);
     },
-    2000);
+    4000);
   }
 }
