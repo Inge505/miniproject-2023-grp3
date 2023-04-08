@@ -11,7 +11,7 @@ export class CreatePage implements OnInit {
 
   ngOnInit() {}
 
-  toDashboard() {
+  toHomePage() {
     this.router.navigate(["/home"]);
   }
 }

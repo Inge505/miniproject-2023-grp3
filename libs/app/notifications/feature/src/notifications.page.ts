@@ -11,7 +11,7 @@ export class NotificationsPage implements OnInit {
 
   ngOnInit() {}
 
-  toHomePage() {
+  toProfilePage() {
     this.router.navigate(["/profile"]);
   }
 }

@@ -1,8 +1,13 @@
 
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-label (click)="toHomePage()" color="tertiary" style="font-size: 100%; font:bold"> <ion-icon
-        name="arrow-back-outline" size="small"></ion-icon>Comment</ion-label>
+
+    <div class="back-button-wrapper">
+
+      <ion-icon name="arrow-back-outline" size="small" color="tertiary"></ion-icon>
+      <ion-label (click)="toHomePage()" color="tertiary"  style="font-size: 100%; font:bold">&nbsp;comment</ion-label>
+
+    </div>
     <ion-badge slot="end" class="timer">134:20:00</ion-badge>
   </ion-toolbar>
 </ion-header>

@@ -2,9 +2,15 @@
 <ion-content>
   <ion-header>
     <ion-toolbar color="secondary">
-      <ion-label (click)="toHomePage()" color="tertiary" style = "font-size: 100%; font:bold">  <ion-icon name="arrow-back-outline" size="small"></ion-icon>Notifications</ion-label>
-      <ion-badge slot="end" style="position:static">00:00</ion-badge>
-  </ion-toolbar>
+  
+      <div class="back-button-wrapper">
+  
+        <ion-icon name="arrow-back-outline" size="small" color="tertiary"></ion-icon>
+        <ion-label (click)="toProfilePage()" color="tertiary"  style="font-size: 100%; font:bold">&nbsp;notifications</ion-label>
+  
+      </div>
+      <ion-badge slot="end" class="timer">134:20:00</ion-badge>
+    </ion-toolbar>
   </ion-header>
 
 

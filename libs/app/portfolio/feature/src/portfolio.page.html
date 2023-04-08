@@ -1,7 +1,12 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-label (click)="toHomePage()" color="tertiary" style="font-size: 100%; font:bold"> <ion-icon
-        name="arrow-back-outline" size="small"></ion-icon>Portfolio</ion-label>
+
+    <div class="back-button-wrapper">
+
+      <ion-icon name="arrow-back-outline" size="small" color="tertiary"></ion-icon>
+      <ion-label (click)="toHomePage()" color="tertiary"  style="font-size: 100%; font:bold">&nbsp;portfolio</ion-label>
+
+    </div>
     <ion-badge slot="end" class="timer">134:20:00</ion-badge>
   </ion-toolbar>
 </ion-header>
@@ -148,7 +153,7 @@
         <ion-icon src="assets/icons/search.svg" color="primary" size="small"></ion-icon>
       </ion-tab-button>
 
-      <ion-tab-button class="bottomBarButton" (click)= "toCreatePage()">
+      <ion-tab-button class="bottomBarButton" (click)="toCreatePage()">
         <ion-icon name="add-circle" color="primary"></ion-icon>
       </ion-tab-button>
 
