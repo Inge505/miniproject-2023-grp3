@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Logout } from '@mp/app/profile/util';
+import { Store } from '@ngxs/store';
+
 
 @Component({
   selector: 'mp-settings',
@@ -7,10 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private readonly store: Store
+    ) { }
 
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("");
+  }
 
   toProfilePage() {
     this.router.navigate(["/profile"]);
@@ -18,7 +26,7 @@ export class SettingsPage implements OnInit {
 
   logOut(){
     console.log("Sorry to see you go :(");
-    this.router.navigate(["/welcome"]);
+    this.store.dispatch(new Logout());
 
   }
 }
