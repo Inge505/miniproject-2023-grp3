@@ -28,7 +28,6 @@ export class PostComponent implements OnInit {
   });
 
   async ngOnInit() {
-    // Replace 'sampleUserId' with a valid user ID from your mock data
     await this.getPostsByUser('123');
   }
 
