@@ -31,5 +31,14 @@ module.exports = (config, options, context) => {
     new webpack.DefinePlugin(getClientEnvironment(context.configuration)),
     new NodePolyfillPlugin()
   );
+  config.resolve = {
+    ...config.resolve,
+    fallback: {
+      fs: false,
+      net: false,
+      tls: false,
+      child_process: false,
+    },
+  };
   return config;
 };
