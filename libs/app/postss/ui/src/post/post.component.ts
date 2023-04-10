@@ -5,14 +5,16 @@ import { CreatePost } from '@mp/app/postss/util';
 import { Hashtag, IPost } from '@mp/api/postss/util';
 import { PostState, PostsState } from '@mp/app/postss/data-access';
 import { Observable } from 'rxjs';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { ActionsExecuting, actionsExecuting } from '@ngxs-labs/actions-executing';
+import { PostApi } from '@mp/app/postss/data-access';
+
 @Component({
   selector: 'ms-post-page-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
 
   @Output() postCreated = new EventEmitter<void>();
   @Select(PostState.post) post$!: Observable<IPost| null>;
@@ -25,7 +27,22 @@ export class PostComponent {
     hashtag: ['', [Validators.required]],
   });
 
-  constructor(private readonly fb: FormBuilder, private readonly store: Store) {}
+  async ngOnInit() {
+    // Replace 'sampleUserId' with a valid user ID from your mock data
+    await this.getPostsByUser('123');
+  }
+
+  constructor(private readonly fb: FormBuilder, private readonly store: Store, private readonly postApi: PostApi) {}
+
+  async getPostsByUser(userId: string) {
+  try {
+    const posts = await this.postApi.getPostByUserId('123'); //set to userID 123 just for testing
+    console.log('Fetched posts:', posts);
+  } catch (error) {
+    console.error('Error fetching posts by user ID:', error);
+  }
+}
+
 
   createPost() {
     const createdBy = this.postDetailsForm.value.createdBy || '';
