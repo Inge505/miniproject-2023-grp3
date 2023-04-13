@@ -1,4 +1,4 @@
-import { PostModule as PostDataAccessModule } from '@mp/api/post/data-access';
+import { PostModule as PostDataAccessModule } from '@mp/api/postss/data-access';
 import { Module } from '@nestjs/common';
 import { CqrsModule } from '@nestjs/cqrs';
 import {
