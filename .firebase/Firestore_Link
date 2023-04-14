@@ -1,0 +1,7 @@
+//Users
+https://firestore.googleapis.com/v1/projects/
+cos301-mp-grp3/databases/(default)/documents/Users?key=AIzaSyAvdiHZYdlzeCWkEAFDB9aCRBNh9xkgCYw
+
+//Posts
+https://firestore.googleapis.com/v1/projects/
+cos301-mp-grp3/databases/(default)/documents/Posts?key=AIzaSyAvdiHZYdlzeCWkEAFDB9aCRBNh9xkgCYw
