@@ -9,17 +9,13 @@ export class PostRepository {
       throw new Error('Method not implemented.');
   }
 
-  
-  
-
-  
   async findOne(post: IPost) {
     if(post.postID == ""){
       throw Error("No PostID");
     }
     return await admin
       .firestore()
-      .collection('posts')
+      .collection('Posts')
       .withConverter<IPost>({
         fromFirestore: (snapshot) => {
           return snapshot.data() as IPost;
@@ -39,9 +35,9 @@ export class PostRepository {
 
     const querySnapshot = await admin
       .firestore()
-      .collection('posts')
-      .where('createdAt', '>', admin.firestore.Timestamp.fromDate(oneWeekAgo))
-      .orderBy('likes', 'desc')
+      .collection('Posts')
+      .where('created', '>', admin.firestore.Timestamp.fromDate(oneWeekAgo))
+      .orderBy('totalLikes', 'desc')
       .limit(30)
       .withConverter<IPost>({
         fromFirestore: (snapshot) => {
@@ -62,7 +58,7 @@ export class PostRepository {
   async createPost(post: IPost) {
     return await admin
       .firestore()
-      .collection('post')
+      .collection('Post')
       .doc(post.postID)
       .create(post);
   }
@@ -70,23 +66,23 @@ export class PostRepository {
   async updateLikes(post: IPost) {
     return await admin
       .firestore()
-      .collection('post')
+      .collection('Post')
       .doc(post.postID)
-      .update({post : { likes: admin.firestore.FieldValue.increment(1)}});
+      .update({post : { totalLikes: admin.firestore.FieldValue.increment(1)}});
 
   }
-  
+
   async updateComments(post: IPost) {
     return await admin
     .firestore()
-    .collection('post')
+    .collection('Post')
     .doc(post.postID)
     .update({post : {comments : admin.firestore.FieldValue.arrayUnion(post.comments)}})
   }
 
   async commentOnPost(post: IPost, comment: IComment) {
     try {
-      const postRef = admin.firestore().collection('posts').doc(post.postID);
+      const postRef = admin.firestore().collection('Posts').doc(post.postID);
       await postRef.update({
         comments: admin.firestore.FieldValue.arrayUnion(comment)
       });
@@ -104,14 +100,14 @@ export class PostRepository {
 
   async buyPost(post: IPost, buyer: IUser) {
   try {
-    const postRef = admin.firestore().collection('posts').doc(post.postID);
+    const postRef = admin.firestore().collection('Posts').doc(post.postID);
     await postRef.update({
       Sold: true,
       OwnedBy: buyer,
     });
     return { success: true };
   } catch (error) {
-    
+
     if(error instanceof Error)
     return { success: false, message: error.message };
     else {
@@ -121,7 +117,7 @@ export class PostRepository {
     }
 
 
-  
+
   /*Examples from profile
 
   async createProfile(profile: IPost) {
