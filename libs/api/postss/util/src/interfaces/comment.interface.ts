@@ -1,4 +1,4 @@
 export interface IComment {
-    creatorID: string;
+    commenterID: string;
     comment: string | null | undefined;
 }
