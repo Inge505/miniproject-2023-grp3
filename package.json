@@ -99,6 +99,7 @@
         "@nrwl/workspace": "15.7.1",
         "@nxtend/capacitor": "^13.0.0",
         "@schematics/angular": "~15.1.0",
+        "@types/firebase": "^3.2.1",
         "@types/jest": "28.1.1",
         "@types/node": "^18.13.0",
         "@typescript-eslint/eslint-plugin": "^5.36.1",

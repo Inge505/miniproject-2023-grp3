@@ -262,6 +262,7 @@ export class PostState { /* changed from 'PostsState' to 'PostState' */
       .post$(user.uid)
       .pipe(tap((profile: IPost) => ctx.dispatch(new SetPost(profile))));
   }
+  
   @Action(CreatePost)
 async createPost(ctx: StateContext<PostStateModel>, action: CreatePost) {
   // Get the form values from the action payload

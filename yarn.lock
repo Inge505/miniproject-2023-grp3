@@ -279,7 +279,7 @@
 
 "@angular/fire@^7.5.0":
   version "7.5.0"
-  resolved "https://registry.npmjs.org/@angular/fire/-/fire-7.5.0.tgz"
+  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-7.5.0.tgz#5918ae7731db89056ef9c6432b9740eeddf65774"
   integrity sha512-M/JJ5SKnpfNZFLKl0Awjn3r2NhURy2Mx+E8EzSDWSg1sHD7IThrynZYPUSZR+cd3KGsGoEacIP2x8Ra+0a+CVg==
   dependencies:
     "@angular-devkit/schematics" "^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0"
@@ -3647,6 +3647,13 @@
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
+
+"@types/firebase@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@types/firebase/-/firebase-3.2.1.tgz#17c1c8fee7485ab09668d2461e34540bdf44b3b1"
+  integrity sha512-G8XgHMu2jHlElfc2xVNaYP50F0qrqeTCjgeG1v5b4SRwWG4XKC4fCuEdVZuZaMRmVygcnbRZBAo9O7RsDvmkGQ==
+  dependencies:
+    firebase "*"
 
 "@types/fs-extra@^8.0.0":
   version "8.1.2"
@@ -7508,7 +7515,7 @@ firebase-tools@^11.25.1:
     winston-transport "^4.4.0"
     ws "^7.2.3"
 
-firebase@^9.18.0, firebase@^9.8.0:
+firebase@*, firebase@^9.18.0, firebase@^9.8.0:
   version "9.19.1"
   resolved "https://registry.npmjs.org/firebase/-/firebase-9.19.1.tgz"
   integrity sha512-MeukV4NIk6usV1ZbnoA36gumK62JzxOZmF6OZyqkFwJ7edpAEyYNZXvExQlFsvnx2ery0UwNIvu4pKIZS3HiEQ==
