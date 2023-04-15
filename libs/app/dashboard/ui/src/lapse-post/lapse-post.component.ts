@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
 export class LapsePostComponent  implements OnInit {
 
   constructor(private router: Router) { }
+
+  @Input() username = `username`;
+  @Input() profilePicture = `https://ionicframework.com/docs/img/demos/avatar.svg`;
+  @Input() postTitle = `Default Title`;
+  @Input() postImage = `assets/images/landscape.jpg`;
 
   ngOnInit() {
     console.log("");
