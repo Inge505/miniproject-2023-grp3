@@ -65,6 +65,69 @@ describe('Find One Repository Test', () => {
     
 })
 
+//This is a test for liking the post
+/*// Create a mock for the Firestore batch
+jest.mock('firebase-admin', () => ({
+  firestore: () => ({
+    batch: jest.fn(() => ({
+      update: jest.fn(),
+      commit: jest.fn(),
+    })),
+    collection: jest.fn(() => ({
+      doc: jest.fn(() => ({
+        update: jest.fn(),
+      })),
+    })),
+  }),
+}));
+
+// Define test data
+const post: IPost = {
+  postID: 'postId',
+  ownedBy: 'userId',
+};
+
+const liker: IUser = {
+  id: 'likerId',
+};
+
+describe('updateLikes', () => {
+  it('should update likes and time balances correctly', async () => {
+    // Mock the batch update functions
+    const batchUpdateSpy = jest.spyOn(admin.firestore().batch(), 'update');
+    const postRefUpdateSpy = jest.spyOn(admin.firestore().collection('posts').doc(post.postID), 'update');
+    const userRefUpdateSpy = jest.spyOn(admin.firestore().collection('Users').doc(post.ownedBy!), 'update');
+    const likerRefUpdateSpy = jest.spyOn(admin.firestore().collection('Users').doc(liker.id), 'update');
+
+    // Call the function being tested
+    await updateLikes(post, liker);
+
+    // Assert that batch update functions were called with the correct arguments
+    expect(batchUpdateSpy).toHaveBeenCalledTimes(3);
+    expect(postRefUpdateSpy).toHaveBeenCalledWith({
+      totalLikes: admin.firestore.FieldValue.increment(1),
+      ownerValue: admin.firestore.FieldValue.increment(1),
+    });
+    expect(userRefUpdateSpy).toHaveBeenCalledWith({ timeBalance: admin.firestore.FieldValue.increment(1) });
+    expect(likerRefUpdateSpy).toHaveBeenCalledWith({ timeBalance: admin.firestore.FieldValue.increment(1) });
+
+    // Assert that batch commit was called
+    expect(admin.firestore().batch().commit).toHaveBeenCalled();
+  });
+
+  it('should handle errors correctly', async () => {
+    // Mock the batch commit function to throw an error
+    jest.spyOn(admin.firestore().batch(), 'commit').mockRejectedValueOnce(new Error('Batch commit error'));
+
+    // Call the function being tested
+    const result = await updateLikes(post, liker);
+
+    // Assert that the function returns an error message
+    expect(result).toEqual({ success: false, message: 'Batch commit error' });
+  });
+});*/
+
+
 /*describe("updateLikes Repository Test", () => {
 
   beforeEach(() => {

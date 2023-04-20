@@ -7,7 +7,7 @@ import {
 import { QueryBus } from '@nestjs/cqrs';
 import { IPost } from '@mp/api/postss/util';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import { PostService, CommentService, BuyService, CreateService} from '@mp/api/postss/feature';
+import { PostService, CommentService, BuyService, CreateService, LikeService} from '@mp/api/postss/feature';
 
 /*
 Function that calls the postTrendingGetQuery and returns an array of IPost objects
@@ -30,7 +30,7 @@ export const likePost = functions.https.onCall(
       request: ILikePostRequest
     ): Promise<ILikePostResponse> => {
       const app = await NestFactory.createApplicationContext(CoreModule);
-      const service = app.get(PostService);
+      const service = app.get(LikeService);
       return service.likePost(request);
     }
   );

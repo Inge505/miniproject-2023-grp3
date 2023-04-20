@@ -41,3 +41,12 @@ async createPost(request: ICreatePostRequest): Promise<ICreatePostResponse> {
 return await this.commandBus.execute<CreatePostCommand, ICreatePostResponse>(new CreatePostCommand(request));
 }
 }
+
+@Injectable()
+export class LikeService {
+constructor(private readonly commandBus: CommandBus) {}
+
+async likePost(request: ILikePostRequest): Promise<ILikePostResponse> {
+return await this.commandBus.execute<LikePostCommand, ILikePostResponse>(new LikePostCommand(request));
+}
+}

@@ -64,13 +64,46 @@ export class PostRepository {
       .create(post);
   }
 
-  async updateLikes(post: IPost) {
+  /*async updateLikes(post: IPost) {
     return await admin
       .firestore()
       .collection('post')
       .doc(post.postID)
       .update({post : { likes: admin.firestore.FieldValue.increment(1)}});
 
+  }*/
+
+  async updateLikes(post: IPost, liker: IUser) { //update like count as well as time balances after liker likes a post 
+    try {
+      const likeBatch = admin.firestore().batch()
+      // update totalLikes
+      const postRef = admin.firestore().collection('posts').doc(post.postID);
+      likeBatch.update(postRef, {totalLikes: admin.firestore.FieldValue.increment(1), ownerValue: admin.firestore.FieldValue.increment(1)});
+
+      // Increase time balance of owner of post
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const userRef = admin.firestore().collection('Users').doc(post.ownedBy!); // non-null assertion (!) used because type (string | null | undefined) cannot be passed into string parameter of doc function. warning diasbled
+      likeBatch.update(userRef, {timeBalance: admin.firestore.FieldValue.increment(1)}); // 1 = time gained from interaction
+
+      // increase time balance of the user who liked the picture
+      const likerRef = admin.firestore().collection('Users').doc(liker.id);
+      likeBatch.update(likerRef, {timeBalance: admin.firestore.FieldValue.increment(1)});
+
+      // Commit the batch (execute all the writes)
+      await likeBatch.commit();
+
+      const postSnapshot = this.findOne(post)
+
+      return { success: true , returnedPost: postSnapshot};
+    } catch (error: unknown) {
+        console.error('Error liking on post:', error);
+
+        if(error instanceof Error)
+          return { success: false, returnerdPost: null, message: error.message };
+        else {
+          return { success: false, returnedPost: null, message: error };
+      }
+    }
   }
   
   async updateComments(post: IPost) {

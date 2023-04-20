@@ -1,6 +1,7 @@
 import {
 ICreatePostRequest,
 IComment,
+IUser
 ICreatePostResponse,
 IGetPostRequest,
 IGetPostResponse,
@@ -57,6 +58,10 @@ static fromData(post: IPost): Post {
 
 create() {
   this.apply(new PostCreatedEvent(this.toJSON()));
+}
+
+like(liker: IUser) {
+  this.apply(new PostLikedEvent(this.toJSON(),liker))
 }
 
 toJSON(): IPost {

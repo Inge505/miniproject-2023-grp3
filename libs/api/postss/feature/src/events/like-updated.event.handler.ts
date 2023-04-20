@@ -1,15 +1,17 @@
-import { PostRepository } from '@mp/api/postss/data-access';
-import { LikeUpdatedEvent } from '@mp/api/postss/util';
-import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
+// import { PostRepository } from '@mp/api/postss/data-access';
+// import { PostLikedEvent } from '@mp/api/postss/util';
+// import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 
-@EventsHandler(LikeUpdatedEvent)
-export class UpdateLikedCountEventHandler
-  implements IEventHandler<LikeUpdatedEvent>
-{
-  constructor(private readonly repository: PostRepository) {}
+// @EventsHandler(PostLikedEvent)
+// export class PostLikedEventHandler
+//   implements IEventHandler<PostLikedEvent>
+// {
+//   constructor(private readonly repository: PostRepository) {}
 
-  async handle(event: LikeUpdatedEvent) {
-    console.log(`${UpdateLikedCountEventHandler.name}`);
-    await this.repository.updatePost(event.post);
-  }
-}
+//   async handle(event: PostLikedEvent) {
+//     console.log(`${PostLikedEventHandler.name}`);
+//     await this.repository.updateLikes(event.post,event.user);
+//   }
+// }
+
+//This code has moved to post-liked.event.handler.ts in the same directory
