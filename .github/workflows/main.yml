@@ -18,5 +18,7 @@ jobs:
       - run: 'yarn install'
       - run: 'curl -sL https://firebase.tools | bash'
       - run: firebase use default --token ${{ secrets.FIREBASE_TOKEN }}
-      - run: 'yarn nx run-many --target=build --all --parallel --configuration=production --skip-nx-cache'
-      - run: yarn shipit:prod --non-interactive -f --token ${{ secrets.FIREBASE_TOKEN }}
+      - run: yarn run env-cmd -f .env.prod nx run app:build --configuration=production --skip-nx-cache
+      - run: yarn run env-cmd -f .env.prod nx run api:build --configuration=production --skip-nx-cache
+      - run: yarn run env-cmd -f .env.prod nx run cli:build --configuration=production --skip-nx-cache
+      - run: firebase deploy --non-interactive -f --token ${{ secrets.FIREBASE_TOKEN }}
